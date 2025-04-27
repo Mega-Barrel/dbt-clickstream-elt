@@ -1,3 +1,6 @@
 
 # cache file
 __pycache__
+
+# creds file
+service_account.json

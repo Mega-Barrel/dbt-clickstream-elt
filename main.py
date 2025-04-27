@@ -2,20 +2,22 @@
 
 from datetime import datetime
 
-from src.pipeline import ClickstreamExtractor
-from src.config import DataConfig
+from src.pipeline import ClickstreamELTPipeline
 
 if __name__ == '__main__':
-    # Pipeline parameter
-    NUM_RECORDS = 10
-    START_DATE = datetime(2025, 4, 1)
-    CONFIG = DataConfig()
+    # Pipeline parameters
+    NUM_RECORDS = 500000
+    START_DATE = datetime(2025, 1, 1)
+    PROJECT_ID = "analytics-engineering-101"
+    DATASET_ID = "clickstream_data"
+    TABLE_ID = "events"
 
     # Run pipeline
-    pipeline = ClickstreamExtractor(
-        num_records=NUM_RECORDS,
-        start_date=START_DATE,
-        config=CONFIG,
+    pipeline = ClickstreamELTPipeline(
+        num_records = NUM_RECORDS,
+        start_date = START_DATE,
+        project_id = PROJECT_ID,
+        dataset_id = DATASET_ID,
+        table_id = TABLE_ID
     )
-    data = pipeline.execute()
-    print(data[0])
+    pipeline.run()

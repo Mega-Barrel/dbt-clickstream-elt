@@ -13,10 +13,10 @@ class DataConfig:
         ],
         "probabilities": [
             0.4,
-            0.3,
+            0.25,
+            0.2,
             0.1,
-            0.1,
-            0.1,
+            0.05,
         ]
     }
 
@@ -42,6 +42,13 @@ class DataConfig:
         "desktop",
         "tablet",
     ]
+
+    DEVICE_MODEL = {
+        "mobile": [
+            'Android',
+            'IOS'
+        ]
+    }
 
     NUM_USERS = 1000
 
